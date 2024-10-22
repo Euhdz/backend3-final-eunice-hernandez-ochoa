@@ -1,3 +1,5 @@
+import userModel from "../dao/models/User.js";
+
 export default class Users {
   get = (params) => {
     return userModel.find(params);
