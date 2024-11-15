@@ -4,7 +4,7 @@ export default class PetDTO {
       name: pet.name || "",
       specie: pet.specie || "",
       image: pet.image || "",
-      birthDate: pet.birthDate || "12-30-2000",
+      birthDate: pet.birthDate || "2000-12-30",
       adopted: false,
     };
   };

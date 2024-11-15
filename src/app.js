@@ -26,3 +26,23 @@ app.use("/api/sessions", sessionsRouter);
 app.use("/api/mocks", mocksRouter);
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+import swaggerJSDoc from 'swagger-jsdoc';
+import swaggerUiExpress from "swagger-ui-express"; 
+
+
+const swaggerOptions = {
+    definition: {
+        openapi: "3.0.1", 
+        info: {
+            title: "Pets Adoption App Documentation",
+            description: "App to find families for pets"
+        }
+    },
+    apis: ["./src/docs/**/*.yaml"]
+}
+
+
+const specs = swaggerJSDoc(swaggerOptions);
+
+app.use("/apidocs", swaggerUiExpress.serve, swaggerUiExpress.setup(specs)); 
