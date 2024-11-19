@@ -4,6 +4,8 @@ import cookieParser from "cookie-parser";
 
 mongoose.set("strictQuery", false);
 
+import "./database.js";
+
 import usersRouter from "./routes/users.router.js";
 import petsRouter from "./routes/pets.router.js";
 import adoptionsRouter from "./routes/adoption.router.js";
@@ -12,9 +14,6 @@ import mocksRouter from "./routes/mocks.router.js";
 
 const app = express();
 const PORT = process.env.PORT || 8080;
-const connection = mongoose.connect(
-  `mongodb+srv://euhdz8a:coderhouse@cluster0.bphuura.mongodb.net/petsadoption?retryWrites=true&w=majority&appName=Cluster0`
-);
 
 app.use(express.json());
 app.use(cookieParser());
